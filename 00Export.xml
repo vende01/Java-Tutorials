@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<j:jelly 
+xmlns:j="jelly:core"
+xmlns:x="jelly:xml" 
+xmlns:spc="jelly:com.hp.test.spc.tags.SPCTagLibrary" 
+xmlns:sel="jelly:com.hp.test.framework.jelly.FrameworkTagLibrary">
+
+
+
+
+<sel:Browser_MultiTest />
+<sel:Wait_ForVisible id="name=loginName" time="120" description="waiting for the page to load" />
+<sel:User_Login idUserName="name=loginName" idPassword="name=password" /> 
+<sel:ScreenShot />
+<sel:Wait_ForVisible id="xpath=//a[contains(text(),'Search and Export')]" time="60"  description="Waiting for Search and Exports page to load" />
+<sel:Mouse_Click id="xpath=//a[contains(text(),'Search and Export')]"  description="Clicking on Search and Exports page" />
+<sel:NgMouse_Click id="xpath=//div[contains(text(),' Search and Export ')]" description="Cliking on the S and E Page" />
+<sel:Switch_ChildBrowser />
+<sel:Wait time="10" />
+<sel:NgMouse_Click id="xpath=//a[@id='ux-tab-2']" description="Clicking on Advanced Search"/>
+<sel:Wait time="1" />
+<sel:NgMouse_Click id="xpath=//SPAN[@class='ng-star-inserted'][contains(text(),'Visual Query')]" description="Clicking on Visual Query Tab"/>
+<sel:NgMouse_Click id="xpath=//button[@aria-label='Remove The Node']" description="Closing SENT_DATE Feild Criteria"/>
+<sel:NgMouse_Click id="xpath=//BUTTON[contains(text(),' Date Range ')]" description="Clicking on Date Range"/>
+<sel:NgMouse_Click id="xpath=(//I[@class='ux-select-icon ux-icon ux-select-chevron-icon ux-icon-down ng-star-inserted'])[8]" description="Clicking on Archive Date drop down"/>
+<sel:NgMouse_Click id="xpath=//span[contains(text(),'Archived Date/Time')]" description="Clicking on Archived Date Option"/>
+<sel:NgMouse_Click id="xpath=(//ux-icon[@class='ux-icon ux-icon-calendar'])[2]" description="Clicking on Calendar Icon"/>
+<sel:NgMouse_Click id="xpath=//button[contains(text(),' 7 Days ')]" description="Clicking on 7 Days Option"/>
+<sel:NgMouse_Click id="xpath=//BUTTON[@id='accept-button']" description="Clicking on Accept Button"/>
+<sel:Wait time="10" />
+<sel:NgMouse_Click id="xpath=//button[contains(text(),'Add to Query')]" description="Clicking on Add to Query"/>
+<sel:ScreenShot />
+<sel:NgMouse_Click id="xpath=//BUTTON[text()=' Email ']" description="Clicking on Email"/>
+<sel:Wait time="10" />
+<sel:NgMouse_Click id="xpath=//ux-tag-input[../label[text()='Body/Attachments']]" description="Clicking on Search Input Text Box to Activate"/>
+<sel:NgInput_Value id="xpath=//label[text()='Body/Attachments']/..//*//INPUT" value="Gamble" description="Entering the value for Sender input"/>
+<sel:NgMouse_Click id="xpath=//button[contains(text(),'Add to Query')]" description="Clicking on Add to Query"/>
+<sel:ScreenShot />
+<sel:NgMouse_Click id="xpath=//ds-perspective-actions//button[contains(text(),'Search')]" description="Clicking on Search Button"/>
+<sel:Wait time="2" />
+<sel:ScreenShot />
+<sel:NgMouse_Click id="xpath=//button[contains(text(),' Export ')]" description="Clicking on Export button"/>
+<sel:NgMouse_Click id="xpath=//span[contains(text(),'Export all')]" description="Clicking on Export All"/>
+<sel:NgInput_Value id="xpath=//*[@id='step-one-name']" value="Export_Name_15_011" description="Name the export button" />
+<sel:Wait time="2" />
+<sel:NgMouse_Click id="xpath=//button[contains(text(),' Next ')]" description="Clicking on Next Button"/>
+<sel:Wait time="2" />
+<sel:NgMouse_Click id="xpath=//button[contains(text(),' Next ')]" description="Clicking on Next Button"/>
+<sel:Wait time="2" />
+<sel:NgMouse_Click id="xpath=//button[contains(text(),' Finish ')]" description="Clicking on Finish Button"/>
+<!-- <sel:NgMouse_Click id="xpath=//*[@class='logout-btn ng-star-inserted']" description="Clicking on Logout"/>
+<sel:Wait time="2" />
+<sel:NgMouse_Click id="xpath=//*[@class='m-b btn button-primary ux-focus-indicator']" description="Confirm Logout"/>
+<sel:Browser_Close />     -->
+</j:jelly>
